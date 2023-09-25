@@ -1,7 +1,5 @@
-mongo:
-  container_name: mongo
-  image: mongo:latest
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
 
-mongo_express:
-  container_name: mongo-express
-  image: mongo-express:latest
