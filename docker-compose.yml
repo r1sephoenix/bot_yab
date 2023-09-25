@@ -6,5 +6,3 @@ services:
   mongo_express:
     container_name: mongo-express
     image: mongo-express:latest
-    depends_on:
-      - mongo
