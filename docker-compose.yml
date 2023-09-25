@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   mongo:
-    image: mongo:latest
+    image: mongo
     restart: always
     env_file: config.env
     ports:
@@ -11,14 +11,14 @@ services:
       - ${MONGODB_PATH:-./mongodb}:/data/db
 
   chatgpt_telegram_bot:
-    image: cr.yandex/crpuhgkma7bt3sgtml2k/ver2:latest
+    image: cr.yandex/crpuhgkma7bt3sgtml2k/ver2
     command: python3 bot/bot.py
     restart: always
     depends_on:
       - mongo
 
   mongo_express:
-    image: mongo-express:latest
+    image: mongo-express
     restart: always
     env_file: config.env
     ports:
@@ -32,4 +32,3 @@ services:
       - ME_CONFIG_BASICAUTH_PASSWORD=${MONGO_EXPRESS_PASSWORD:-password}
     depends_on:
       - mongo
-
