@@ -5,5 +5,3 @@ services:
     container_name: mongo
     restart: always
     image: mongo:latest
-    ports:
-      - 127.0.0.1:${MONGODB_PORT:-27017}:${MONGODB_PORT:-27017}
