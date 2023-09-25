@@ -3,9 +3,4 @@ version: "3.7"
 services:
   mongo:
     image: mongo
-    restart: always
     env_file: config.env
-    ports:
-      - 127.0.0.1:${MONGODB_PORT:-27017}:${MONGODB_PORT:-27017}
-    volumes:
-      - ${MONGODB_PATH:-./mongodb}:/data/db
