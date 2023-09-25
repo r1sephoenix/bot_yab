@@ -1,5 +1,4 @@
 version: "3"
-
 services:
     mongo:
       container_name: mongo
@@ -10,7 +9,7 @@ services:
         - 127.0.0.1:${MONGODB_PORT:-27017}:${MONGODB_PORT:-27017}
       volumes:
         - ${MONGODB_PATH:-./mongodb}:/data/db
-  
+
     chatgpt_telegram_bot:
       container_name: chatgpt_telegram_bot
       image: cr.yandex/crpuhgkma7bt3sgtml2k/ver2:latest
@@ -18,7 +17,7 @@ services:
       restart: always
       depends_on:
         - mongo
-  
+
     mongo_express:
       container_name: mongo-express
       image: mongo-express:latest
