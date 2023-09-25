@@ -1,17 +1,9 @@
-version: "3.7"
 services:
   mongo:
     container_name: mongo
     image: mongo:latest
     restart: always
-
-  chatgpt_telegram_bot:
-    container_name: chatgpt_telegram_bot
-    image: cr.yandex/crpuhgkma7bt3sgtml2k/ver2:latest
-    restart: always
-    depends_on:
-      - mongo
-
+    
   mongo_express:
     container_name: mongo-express
     image: mongo-express:latest
