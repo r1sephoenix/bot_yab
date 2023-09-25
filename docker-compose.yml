@@ -3,4 +3,3 @@ version: "3.7"
 services:
   mongo:
     image: mongo
-    env_file: config.env
